@@ -132,9 +132,14 @@
               <h2 class="h6 text-uppercase text-body-secondary">On this page</h2>
               <div class="index-heading">Getting started</div>
               <a class="index-link" href="#getting-started">Starter template &amp; basics</a>
-              <a class="index-link" href="#basic-layout">Layout and grid</a>
-              <a class="index-link" href="#theme-colors">Theme colors</a>
+              <a class="index-link" href="#basic-layout">Layout basics</a>
+              <a class="index-link" href="#containers">Containers</a>
+              <a class="index-link" href="#rows-columns">Rows and columns</a>
+              <a class="index-link" href="#responsive-grid">Mobile responsiveness</a>
+              <a class="index-link" href="#spacing">Padding and margin</a>
               <a class="index-link" href="#typography">Typography</a>
+              <a class="index-link" href="#theme-colors">Theme colors</a>
+              <a class="index-link" href="#image-basics">Image basics</a>
               <div class="index-heading">Navigation</div>
               <a class="index-link" href="#pattern-1">Navbar</a>
               <a class="index-link" href="#pattern-13">Offcanvas menu</a>
@@ -233,33 +238,115 @@
   <div id="basic-layout" class="pt-3 mb-4">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-3">
       <div>
-        <h3 class="h4 mb-1">Basic layout and responsive grid</h3>
-        <p class="text-body-secondary mb-0">A container controls page width; rows and columns create a responsive layout.</p>
+        <h3 class="h4 mb-1">Layout basics</h3>
+        <p class="text-body-secondary mb-0">Bootstrap layouts follow a simple structure: a container holds rows, and rows hold columns.</p>
       </div>
       <a class="btn btn-sm btn-outline-secondary" href="https://getbootstrap.com/docs/5.3/layout/grid/" target="_blank" rel="noopener">Grid docs ↗</a>
     </div>
+
+    <div id="containers" class="pt-3 mb-5">
+      <h4 class="h5 mb-1">Containers</h4>
+      <p class="text-body-secondary">Use <code>.container</code> for a centred responsive maximum width, or <code>.container-fluid</code> when content should use the full available width.</p>
+      <div class="preview-shell">
+        <div class="preview-label">Container examples</div>
+        <div class="preview-canvas">
+          <div class="container border border-primary border-2 p-3 mb-3">
+            <strong>.container</strong> — centred with a responsive maximum width
+          </div>
+          <div class="container-fluid border border-success border-2 p-3">
+            <strong>.container-fluid</strong> — always fills the available width
+          </div>
+        </div>
+        <details class="code-details">
+          <summary class="show-code">Show code</summary>
+          <div class="code-wrap"><pre><code>&lt;div class=&quot;container&quot;&gt;
+  Centred content with a responsive maximum width
+&lt;/div&gt;
+
+&lt;div class=&quot;container-fluid&quot;&gt;
+  Content that fills the available width
+&lt;/div&gt;</code></pre></div>
+        </details>
+      </div>
+    </div>
+
+    <div id="rows-columns" class="pt-3 mb-5">
+      <h4 class="h5 mb-1">Rows and columns</h4>
+      <p class="text-body-secondary">Place <code>.row</code> inside a container, then place <code>.col</code> elements directly inside the row. Bootstrap divides each row into 12 available columns.</p>
+      <div class="preview-shell">
+        <div class="preview-label">Three equal columns</div>
+        <div class="preview-canvas">
+          <div class="container-fluid px-0">
+            <div class="row g-3">
+              <div class="col"><div class="text-bg-primary p-3">Column</div></div>
+              <div class="col"><div class="text-bg-primary p-3">Column</div></div>
+              <div class="col"><div class="text-bg-primary p-3">Column</div></div>
+            </div>
+          </div>
+        </div>
+        <details class="code-details">
+          <summary class="show-code">Show code</summary>
+          <div class="code-wrap"><pre><code>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row g-3&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;&lt;div class=&quot;text-bg-primary p-3&quot;&gt;Column&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;&lt;div class=&quot;text-bg-primary p-3&quot;&gt;Column&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;&lt;div class=&quot;text-bg-primary p-3&quot;&gt;Column&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+        </details>
+      </div>
+      <div class="preview-shell mt-4">
+        <div class="preview-label">Numbered columns</div>
+        <div class="preview-canvas">
+          <div class="container-fluid px-0">
+            <div class="row g-3">
+              <div class="col-8"><div class="text-bg-primary p-3">.col-8</div></div>
+              <div class="col-4"><div class="text-bg-secondary p-3">.col-4</div></div>
+            </div>
+          </div>
+        </div>
+        <details class="code-details">
+          <summary class="show-code">Show code</summary>
+          <div class="code-wrap"><pre><code>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row g-3&quot;&gt;
+    &lt;div class=&quot;col-8&quot;&gt;
+      &lt;div class=&quot;text-bg-primary p-3&quot;&gt;.col-8&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;
+      &lt;div class=&quot;text-bg-secondary p-3&quot;&gt;.col-4&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+        </details>
+      </div>
+      <p class="small text-body-secondary mt-2 mb-0">Column numbers should total 12 when they fill one row. Here, <code>col-8</code> takes two-thirds and <code>col-4</code> takes one-third.</p>
+    </div>
+
+    <div id="responsive-grid" class="pt-3">
+      <h4 class="h5 mb-1">Simple mobile responsiveness</h4>
+      <p class="text-body-secondary">Start with the phone layout, then add a breakpoint class for wider screens. In this example, both columns use the full row on mobile and sit side by side from the medium breakpoint.</p>
     <div class="preview-shell">
-      <div class="preview-label">Preview</div>
+      <div class="preview-label">Stacked on mobile, side by side from 768px</div>
       <div class="preview-canvas">
         <div class="container-fluid px-0">
           <div class="row g-3">
-            <div class="col-12 col-md-8"><div class="p-3 text-bg-primary">Full width, then 8 columns</div></div>
-            <div class="col-12 col-md-4"><div class="p-3 bg-body-tertiary border">Full width, then 4 columns</div></div>
+            <div class="col-12 col-md-6"><div class="p-3 text-bg-primary">.col-12 .col-md-6</div></div>
+            <div class="col-12 col-md-6"><div class="p-3 text-bg-secondary">.col-12 .col-md-6</div></div>
           </div>
         </div>
       </div>
       <details class="code-details">
         <summary class="show-code">Show code</summary>
-        <div class="code-wrap"><pre><code>&lt;main class=&quot;container py-5&quot;&gt;
+        <div class="code-wrap"><pre><code>&lt;div class=&quot;container&quot;&gt;
   &lt;div class=&quot;row g-3&quot;&gt;
-    &lt;div class=&quot;col-12 col-md-8&quot;&gt;
-      &lt;div class=&quot;p-3 text-bg-primary&quot;&gt;Main content&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-md-6&quot;&gt;
+      &lt;div class=&quot;p-3 text-bg-primary&quot;&gt;.col-12 .col-md-6&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;col-12 col-md-4&quot;&gt;
-      &lt;div class=&quot;p-3 bg-body-tertiary border&quot;&gt;Sidebar&lt;/div&gt;
+    &lt;div class=&quot;col-12 col-md-6&quot;&gt;
+      &lt;div class=&quot;p-3 text-bg-secondary&quot;&gt;.col-12 .col-md-6&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/main&gt;</code></pre></div>
+&lt;/div&gt;</code></pre></div>
       </details>
     </div>
 
@@ -287,6 +374,152 @@
       </div>
       <p class="small text-body-secondary mt-2 mb-0">Example: <code>col-12 col-md-6 col-xl-4</code> is full width on phones, half width from medium screens, and one-third width from extra-large screens.</p>
     </div>
+    </div>
+  </div>
+
+  <div id="spacing" class="pt-3 mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-3">
+      <div>
+        <h3 class="h4 mb-1">Padding and margin</h3>
+        <p class="text-body-secondary mb-0">Spacing classes use the format <code>{property}{side}-{size}</code>. Use <code>p</code> for padding and <code>m</code> for margin.</p>
+      </div>
+      <a class="btn btn-sm btn-outline-secondary" href="https://getbootstrap.com/docs/5.3/utilities/spacing/" target="_blank" rel="noopener">Spacing docs ↗</a>
+    </div>
+    <div class="preview-shell">
+      <div class="preview-label">Padding examples</div>
+      <div class="preview-canvas">
+        <div class="border border-primary p-3 mb-3"><code>p-3</code> adds padding on every side.</div>
+        <div class="border border-success px-4 py-2"><code>px-4 py-2</code> adds horizontal and vertical padding separately.</div>
+      </div>
+      <details class="code-details">
+        <summary class="show-code">Show code</summary>
+        <div class="code-wrap"><pre><code>&lt;div class=&quot;p-3&quot;&gt;Padding on every side&lt;/div&gt;
+&lt;div class=&quot;px-4 py-2&quot;&gt;Horizontal and vertical padding&lt;/div&gt;</code></pre></div>
+      </details>
+    </div>
+
+    <div class="preview-shell mt-4">
+      <div class="preview-label">Margin examples</div>
+      <div class="preview-canvas bg-body-tertiary">
+        <div class="bg-white border p-2 mb-4"><code>mb-4</code> adds margin below this element.</div>
+        <div class="bg-white border p-2 mx-auto" style="max-width: 20rem;"><code>mx-auto</code> centres a fixed-width element.</div>
+      </div>
+      <details class="code-details">
+        <summary class="show-code">Show code</summary>
+        <div class="code-wrap"><pre><code>&lt;div class=&quot;mb-4&quot;&gt;Margin below this element&lt;/div&gt;
+
+&lt;div class=&quot;mx-auto&quot; style=&quot;max-width: 20rem;&quot;&gt;
+  Centred fixed-width element
+&lt;/div&gt;</code></pre></div>
+      </details>
+    </div>
+
+    <div class="table-responsive mt-4">
+      <table class="table table-sm align-middle mb-0">
+        <thead><tr><th>Part</th><th>Meaning</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td>Property</td><td><code>m</code> margin, <code>p</code> padding</td><td><code>m-3</code>, <code>p-3</code></td></tr>
+          <tr><td>Side</td><td><code>t</code> top, <code>b</code> bottom, <code>s</code> start, <code>e</code> end, <code>x</code> horizontal, <code>y</code> vertical</td><td><code>mt-3</code>, <code>px-4</code></td></tr>
+          <tr><td>Size</td><td><code>0</code> removes spacing; <code>1</code>–<code>5</code> progressively increase it</td><td><code>mb-0</code>, <code>py-5</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="typography" class="pt-3 mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-3">
+      <div>
+        <h3 class="h4 mb-1">Typography sizes</h3>
+        <p class="text-body-secondary mb-0">Use display, heading, font-size, lead, and small classes to create a clear text-size scale.</p>
+      </div>
+      <a class="btn btn-sm btn-outline-secondary" href="https://getbootstrap.com/docs/5.3/content/typography/" target="_blank" rel="noopener">Typography docs ↗</a>
+    </div>
+    <div class="preview-shell">
+      <div class="preview-label">Preview</div>
+      <div class="preview-canvas">
+        <p class="display-1 mb-2">Display 1</p>
+        <p class="display-4 mb-2">Display 4</p>
+        <p class="h1">Heading 1 size</p>
+        <p class="h3">Heading 3 size</p>
+        <p class="fs-4">Font size 4</p>
+        <p class="lead">Lead paragraph</p>
+        <p class="fs-6">Regular body-sized text</p>
+        <p class="small mb-0">Small text</p>
+      </div>
+      <details class="code-details">
+        <summary class="show-code">Show code</summary>
+        <div class="code-wrap"><pre><code>&lt;p class=&quot;display-1&quot;&gt;Display 1&lt;/p&gt;
+&lt;p class=&quot;display-4&quot;&gt;Display 4&lt;/p&gt;
+&lt;p class=&quot;h1&quot;&gt;Heading 1 size&lt;/p&gt;
+&lt;p class=&quot;h3&quot;&gt;Heading 3 size&lt;/p&gt;
+&lt;p class=&quot;fs-4&quot;&gt;Font size 4&lt;/p&gt;
+&lt;p class=&quot;lead&quot;&gt;Lead paragraph&lt;/p&gt;
+&lt;p class=&quot;fs-6&quot;&gt;Regular body-sized text&lt;/p&gt;
+&lt;p class=&quot;small&quot;&gt;Small text&lt;/p&gt;</code></pre></div>
+      </details>
+    </div>
+  </div>
+
+  <div id="image-basics" class="pt-3 mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-3">
+      <div>
+        <h3 class="h4 mb-1">Image basics</h3>
+        <p class="text-body-secondary mb-0">Keep images responsive and control their height without changing their natural proportions.</p>
+      </div>
+      <a class="btn btn-sm btn-outline-secondary" href="https://getbootstrap.com/docs/5.3/content/images/" target="_blank" rel="noopener">Image docs ↗</a>
+    </div>
+
+    <div class="preview-shell">
+      <div class="preview-label">Responsive image</div>
+      <div class="preview-canvas">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" class="img-fluid" alt="Green hills beneath a cloudy sky">
+      </div>
+      <details class="code-details">
+        <summary class="show-code">Show code</summary>
+        <div class="code-wrap"><pre><code>&lt;img
+  src=&quot;image.jpg&quot;
+  class=&quot;img-fluid&quot;
+  alt=&quot;Describe the image&quot;
+&gt;</code></pre></div>
+      </details>
+    </div>
+
+    <div class="preview-shell mt-4">
+      <div class="preview-label">Fixed height without stretching — crop to fill</div>
+      <div class="preview-canvas">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" class="w-100 object-fit-cover" style="height: 240px;" alt="Mountain landscape">
+      </div>
+      <details class="code-details">
+        <summary class="show-code">Show code</summary>
+        <div class="code-wrap"><pre><code>&lt;img
+  src=&quot;image.jpg&quot;
+  class=&quot;w-100 object-fit-cover&quot;
+  style=&quot;height: 240px;&quot;
+  alt=&quot;Describe the image&quot;
+&gt;</code></pre></div>
+      </details>
+    </div>
+    <p class="small text-body-secondary mt-2"><code>object-fit-cover</code> preserves the image proportions, fills the entire fixed-height area, and crops any overflow.</p>
+
+    <div class="preview-shell mt-4">
+      <div class="preview-label">Responsive 16:9 image</div>
+      <div class="preview-canvas">
+        <div class="ratio ratio-16x9">
+          <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" class="w-100 h-100 object-fit-cover" alt="Sunset over a landscape">
+        </div>
+      </div>
+      <details class="code-details">
+        <summary class="show-code">Show code</summary>
+        <div class="code-wrap"><pre><code>&lt;div class=&quot;ratio ratio-16x9&quot;&gt;
+  &lt;img
+    src=&quot;image.jpg&quot;
+    class=&quot;w-100 h-100 object-fit-cover&quot;
+    alt=&quot;Describe the image&quot;
+  &gt;
+&lt;/div&gt;</code></pre></div>
+      </details>
+    </div>
+    <p class="small text-body-secondary mt-2 mb-0">A ratio wrapper changes height with the available width, which is often more flexible than a fixed pixel height.</p>
   </div>
 
   <div id="theme-colors" class="pt-3 mb-4">
@@ -338,39 +571,6 @@
     </div>
   </div>
 
-  <div id="typography" class="pt-3">
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-3">
-      <div>
-        <h3 class="h4 mb-1">Typography sizes</h3>
-        <p class="text-body-secondary mb-0">Use display, heading, font-size, lead, and small classes to create a clear text-size scale.</p>
-      </div>
-      <a class="btn btn-sm btn-outline-secondary" href="https://getbootstrap.com/docs/5.3/content/typography/" target="_blank" rel="noopener">Typography docs ↗</a>
-    </div>
-    <div class="preview-shell">
-      <div class="preview-label">Preview</div>
-      <div class="preview-canvas">
-        <p class="display-1 mb-2">Display 1</p>
-        <p class="display-4 mb-2">Display 4</p>
-        <p class="h1">Heading 1 size</p>
-        <p class="h3">Heading 3 size</p>
-        <p class="fs-4">Font size 4</p>
-        <p class="lead">Lead paragraph</p>
-        <p class="fs-6">Regular body-sized text</p>
-        <p class="small mb-0">Small text</p>
-      </div>
-      <details class="code-details">
-        <summary class="show-code">Show code</summary>
-        <div class="code-wrap"><pre><code>&lt;p class=&quot;display-1&quot;&gt;Display 1&lt;/p&gt;
-&lt;p class=&quot;display-4&quot;&gt;Display 4&lt;/p&gt;
-&lt;p class=&quot;h1&quot;&gt;Heading 1 size&lt;/p&gt;
-&lt;p class=&quot;h3&quot;&gt;Heading 3 size&lt;/p&gt;
-&lt;p class=&quot;fs-4&quot;&gt;Font size 4&lt;/p&gt;
-&lt;p class=&quot;lead&quot;&gt;Lead paragraph&lt;/p&gt;
-&lt;p class=&quot;fs-6&quot;&gt;Regular body-sized text&lt;/p&gt;
-&lt;p class=&quot;small&quot;&gt;Small text&lt;/p&gt;</code></pre></div>
-      </details>
-    </div>
-  </div>
 </section>
 
 <section class="pattern-section" id="pattern-1">
@@ -2164,6 +2364,12 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
   <script>
+    const themeColorsSection = document.getElementById('theme-colors');
+    const imageBasicsSection = document.getElementById('image-basics');
+    if (themeColorsSection && imageBasicsSection) {
+      imageBasicsSection.before(themeColorsSection);
+    }
+
     const patternOrder = [
       'pattern-1', 'pattern-13', 'pattern-18',
       'pattern-2', 'pattern-21', 'pattern-3', 'pattern-22', 'pattern-20', 'pattern-6',
