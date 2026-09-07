@@ -139,6 +139,7 @@
               <a class="index-link" href="#responsive-grid">Mobile responsiveness</a>
               <a class="index-link" href="#spacing">Padding and margin</a>
               <a class="index-link" href="#typography">Typography</a>
+              <a class="index-link" href="#page-fonts">Changing fonts</a>
               <a class="index-link" href="#theme-colors">Theme colors</a>
               <a class="index-link" href="#image-basics">Image basics</a>
               <div class="index-heading">Navigation</div>
@@ -457,6 +458,53 @@
 &lt;p class=&quot;lead&quot;&gt;Lead paragraph&lt;/p&gt;
 &lt;p class=&quot;fs-6&quot;&gt;Regular body-sized text&lt;/p&gt;
 &lt;p class=&quot;small&quot;&gt;Small text&lt;/p&gt;</code></pre></div>
+      </details>
+    </div>
+  </div>
+
+  <div id="page-fonts" class="pt-3 mb-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-3">
+      <div>
+        <h3 class="h4 mb-1">Changing fonts across the page</h3>
+        <p class="text-body-secondary mb-0">Override Bootstrap’s body font variable once so headings, paragraphs, buttons, forms, and other components inherit it.</p>
+      </div>
+      <a class="btn btn-sm btn-outline-secondary" href="https://getbootstrap.com/docs/5.3/customize/css-variables/" target="_blank" rel="noopener">CSS variables ↗</a>
+    </div>
+    <div class="preview-shell">
+      <div class="preview-label">Site-wide font preview</div>
+      <div class="preview-canvas" style="font-family: Georgia, 'Times New Roman', serif;">
+        <h2>A heading using the new font</h2>
+        <p>This paragraph inherits the same page-wide font family.</p>
+        <button type="button" class="btn btn-primary" style="font-family: inherit;">Buttons inherit it too</button>
+      </div>
+      <details class="code-details">
+        <summary class="show-code">Show code</summary>
+        <div class="code-wrap"><pre><code>&lt;!-- Place this after Bootstrap's stylesheet. --&gt;
+&lt;style&gt;
+  :root {
+    --bs-body-font-family: Georgia, &quot;Times New Roman&quot;, serif;
+  }
+&lt;/style&gt;</code></pre></div>
+      </details>
+    </div>
+
+    <div class="preview-shell mt-4">
+      <div class="preview-label">Using a web font</div>
+      <div class="preview-canvas">
+        <p class="mb-2">Load the font in the page head, then assign it to <code>--bs-body-font-family</code>.</p>
+        <p class="small text-body-secondary mb-0">Include fallback fonts in case the web font cannot load.</p>
+      </div>
+      <details class="code-details">
+        <summary class="show-code">Show code</summary>
+        <div class="code-wrap"><pre><code>&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+
+&lt;style&gt;
+  :root {
+    --bs-body-font-family: &quot;Inter&quot;, Arial, sans-serif;
+  }
+&lt;/style&gt;</code></pre></div>
       </details>
     </div>
   </div>
